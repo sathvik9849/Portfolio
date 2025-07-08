@@ -65,13 +65,13 @@ export default function App() {
   };
   return (
     <Layout>
-      {isIntroDone && isMobile ? (
+      {/* {isIntroDone && isMobile ? (
         <Navbar
           isIntroDone={isIntroDone}
           toggleTheme={toggleTheme}
           theme={theme}
         />
-      ) : null}
+      ) : null} */}
       <Toaster position="top-center" reverseOrder={false} />
       <Outlet context={{ isIntroDone, setIsIntroDone }} />
       <Footer isIntroDone={isIntroDone} />
