@@ -37,7 +37,9 @@ const Timeline: React.FC = () => {
     SiJenkins: <SiJenkins className="text-red-600 text-2xl" />,
     SiDocker: <SiDocker className="text-blue-400 text-2xl" />,
     SiJest: <SiJest className="text-pink-600 text-2xl" />,
-    SiApachekafka: <SiApachekafka className="text-black dark:text-white text-2xl" />,
+    SiApachekafka: (
+      <SiApachekafka className="text-black dark:text-white text-2xl" />
+    ),
     FaJavaScript: <FaJs className="text-yellow-400 text-xl" />,
   };
   const techLabelMap: Record<string, string> = {
@@ -55,7 +57,7 @@ const Timeline: React.FC = () => {
     SiDocker: "Docker",
     SiJest: "Jest",
     SiApachekafka: "Kafka",
-    FaJavaScript: "Javascript"
+    FaJavaScript: "Javascript",
   };
 
   const experiences = [
@@ -98,8 +100,15 @@ const Timeline: React.FC = () => {
       company: "Jio Platforms Limited",
       location: "",
       date: "01/2022 - 05/2022",
-      description: "Developed the full-stack for Automator.AI, a No-Code NLP Automation Tool, using React, Node.js, and Express.js, enabling scalable and efficient test execution for UI and API testing.\nDesigned and integrated parallel processing pipelines leveraging Kafka, lowering API and UI test execution time by 60% through concurrent test runs.\nImplemented a standalone inbound Email/SMS server using Haraka SMTP, reducing external dependencies by 90% and enhancing reliability of communication workflows.",
-      technologies: ["FaJavaScript", "FaReact", "FaNodeJs", "SiExpress", "SiApachekafka"],
+      description:
+        "Developed the full-stack for Automator.AI, a No-Code NLP Automation Tool, using React, Node.js, and Express.js, enabling scalable and efficient test execution for UI and API testing.\nDesigned and integrated parallel processing pipelines leveraging Kafka, lowering API and UI test execution time by 60% through concurrent test runs.\nImplemented a standalone inbound Email/SMS server using Haraka SMTP, reducing external dependencies by 90% and enhancing reliability of communication workflows.",
+      technologies: [
+        "FaJavaScript",
+        "FaReact",
+        "FaNodeJs",
+        "SiExpress",
+        "SiApachekafka",
+      ],
     },
   ];
 
@@ -166,17 +175,19 @@ const Timeline: React.FC = () => {
         </div>
 
         {/* Animation Section */}
-        <div className="w-full md:w-1/3 flex justify-center md:justify-start">
-          <div className=" md:scale-[2] origin-center">
-            <DotLottieReact
-              src="https://lottie.host/10e1a356-a27c-4dfc-a05c-aff1234db578/NLK4ZnUTbM.lottie"
-              className="w-[280px] h-[280px] md:w-[300px] md:h-[300px]"
-              loop
-              autoplay
-              key={isIntroDone && !isMobile ? 1 : 0}
-            />
+        {!isMobile && (
+          <div className="w-full md:w-1/3 flex justify-center md:justify-start">
+            <div className="md:scale-[2] origin-center">
+              <DotLottieReact
+                src="https://lottie.host/10e1a356-a27c-4dfc-a05c-aff1234db578/NLK4ZnUTbM.lottie"
+                className="w-[280px] h-[280px] md:w-[300px] md:h-[300px]"
+                loop
+                autoplay
+                key={isIntroDone ? 1 : 0}
+              />
+            </div>
           </div>
-        </div>
+        )}
       </div>
     </div>
   );

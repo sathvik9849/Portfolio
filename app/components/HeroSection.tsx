@@ -1,18 +1,11 @@
 import React from "react";
-import { useOutletContext } from "@remix-run/react";
 import { IconDownload } from "@tabler/icons-react";
 import resume from "~/assets/resume.pdf";
 import profileImg from "~/assets/ProfilePic.jpeg";
-import bg from "~/assets/bgd.png";
-
-
-interface ContextType {
-  isIntroDone: boolean;
-}
+import { FaGithub, FaLinkedin } from "react-icons/fa";
+import { isMobile } from "mobile-device-detect";
 
 const HeroSection: React.FC = () => {
-  const { isIntroDone } = useOutletContext<ContextType>();
-
   return (
     <div className="flex items-center justify-center min-h-screen px-4">
       <div className="flex flex-col md:flex-row items-center justify-center w-full max-w-5xl gap-8">
@@ -32,10 +25,29 @@ const HeroSection: React.FC = () => {
           </h1>
           <p className="mt-4 text-base md:text-xl text-zinc-600">
             Full-Stack Developer focused on building scalable systems and
-            responsive real-time applications — with an emphasis on performance, clean
-            architecture, and user experience
+            responsive real-time applications — with an emphasis on performance,
+            clean architecture, and user experience
           </p>
-
+          {isMobile && (
+            <div className="flex justify-center gap-6 mt-6 pb-6 pt-6">
+              <a
+                href="https://github.com/sathvik9849"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="bg-gray-800 text-white p-3 rounded-full shadow-lg hover:bg-gray-700 transition duration-300"
+              >
+                <FaGithub className="text-2xl" />
+              </a>
+              <a
+                href="https://www.linkedin.com/in/sathvikreddy-dudipala/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="bg-gray-800 text-white p-3 rounded-full shadow-lg hover:bg-gray-700 transition duration-300"
+              >
+                <FaLinkedin className="text-2xl" />
+              </a>
+            </div>
+          )}
           <a href={resume} download="Sathvikreddy_Resume.pdf">
             <button
               className="bg-black dark:bg-zinc-50 w-48 rounded-2xl h-14 relative text-white dark:text-black text-xl font-semibold group mt-6"
