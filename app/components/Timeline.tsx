@@ -2,6 +2,7 @@ import React from "react";
 import { DotLottieReact } from "@lottiefiles/dotlottie-react";
 import { motion } from "framer-motion";
 import { FaReact, FaNodeJs, FaJava, FaAws, FaJs } from "react-icons/fa";
+import { isMobile } from "mobile-device-detect";
 import {
   SiPostgresql,
   SiAwsamplify,
@@ -166,13 +167,13 @@ const Timeline: React.FC = () => {
 
         {/* Animation Section */}
         <div className="w-full md:w-1/3 flex justify-center md:justify-start">
-          <div className="scale-[2] md:scale-[2] origin-center">
+          <div className=" md:scale-[2] origin-center">
             <DotLottieReact
               src="https://lottie.host/10e1a356-a27c-4dfc-a05c-aff1234db578/NLK4ZnUTbM.lottie"
               className="w-[280px] h-[280px] md:w-[300px] md:h-[300px]"
               loop
               autoplay
-              key={isIntroDone ? 1 : 0}
+              key={isIntroDone && !isMobile ? 1 : 0}
             />
           </div>
         </div>

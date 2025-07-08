@@ -15,6 +15,7 @@ import { isMobile } from "mobile-device-detect";
 import { Toaster } from "react-hot-toast";
 
 export const links: LinksFunction = () => [
+  { rel: "icon", href: "/favicon.ico", type: "image/x-icon" },
   { rel: "preconnect", href: "https://fonts.googleapis.com" },
   {
     rel: "preconnect",
